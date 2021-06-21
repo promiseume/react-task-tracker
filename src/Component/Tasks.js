@@ -1,13 +1,12 @@
-import { FaRegCheckSquare, FaTimes } from 'react-icons/fa'
+import Task from './Task'
 
-//add a icon from fontawesome that removes the item when clicked on
-const Tasks = ({task,onDelete}) => {
-
+const Tasks = ({tasks, onDelete}) => {
+    
     return (
-        <div className='task'>
-            <h3>{task.text} <div className="faDiv"> <FaRegCheckSquare/><FaTimes style={{color:"red",cursor:"pointer"}} onClick={() => onDelete(task.id)} /> </div></h3>
-            <p>{task.day}</p>
-        </div>
+        <>
+            {tasks.map((task) => (<Task key ={task.id} task={task} onDelete={onDelete} />
+            ))}
+        </>
     )
 }
 

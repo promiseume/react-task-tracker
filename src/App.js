@@ -1,34 +1,17 @@
-import Header from './Component/Header'
-import Task from './Component/Task'
-import { useState } from 'react'
-import AddTask from './Component/AddTask'
+import Home from "./pages/home";
+import AddTask from "./pages/add-task";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import SignUp from "./pages/sign-up";
 
 function App() {
-  const[tasks, setTasks]= useState([
-    
-])
-
-//add task
-
-
-const addTask =(task) =>{
-     const id = Math.floor(Math.random() * 10000) +1
-     const newTask = {id,...task}
-     setTasks([...tasks, newTask])
-}
-
-//delete task
-const deleteTask= (id) =>{
-   setTasks(tasks.filter((tasks)=> tasks.id !== id))
-}
-
-
+  const [userid, setUserid] = useState("");
   return (
-    <div className="container">
-      <Header />
-      <AddTask onAdd={addTask} />
-      {tasks.length > 0 ?<Task tasks={tasks} onDelete={deleteTask}/> : "Add a task"}
-    </div>
+    <Switch>
+      <Route path="/" component={Home} exact />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/addtask" component={AddTask} />
+    </Switch>
   );
 }
 

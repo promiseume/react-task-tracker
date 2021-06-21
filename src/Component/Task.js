@@ -1,4 +1,4 @@
-import { FaRegCheckSquare, FaTimes } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 
 //add a icon from fontawesome that removes the item when clicked on
 const Task = ({task,onDelete}) => {

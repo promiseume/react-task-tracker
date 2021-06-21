@@ -4,8 +4,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import SignUp from "./pages/sign-up";
 
-function App() {
-  const [userid, setUserid] = useState("");
+function App() 
+{
   return (
     <Switch>
       <Route path="/" component={Home} exact />
